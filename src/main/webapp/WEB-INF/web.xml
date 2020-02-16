@@ -1,0 +1,24 @@
+<!DOCTYPE web-app PUBLIC
+"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <servlet>
+  	<servlet-name>dispatcher</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>dispatcher</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+<!--  What's going on here...... -->
+<!--	In general, we use web.xml to request servlets or pages based on url 
+		But here, we send requests to DispatcherServlet, which is inbuilt class of spring-mvc framework.
+		That DispatcherServlet, will use the dispatcher-servlet.xml to create beans, and configure annotations.
+		And based on those annotations, it will send request to certain beans.
+		
+		Unlike in spring-core, here we dont create application context and close it.
+		spring-mvc takes care of it.
+-->
